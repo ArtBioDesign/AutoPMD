@@ -6,11 +6,11 @@
 ![AutoPMD](https://github.com/editSeqDesign/AutoPMD/blob/main/AutoPMD/img/home.png)
 
 The main application scenarios of this software tool include:
-  1. Single point mutation primer design
-  2. Double point mutation primer design
-    - The distance between amino acid sites of two mutations is less than or equal to 15bp
-    - The distance between amino acid sites of two mutations is greater than 15bp but less than or equal to 120bp
-    - The distance between amino acid sites of two mutations is greater than 120bp
+1. Single point mutation primer design
+2. Double point mutation primer design
+  - The distance between amino acid sites of two mutations is less than or equal to 15bp
+  - The distance between amino acid sites of two mutations is greater than 15bp but less than or equal to 120bp
+  - The distance between amino acid sites of two mutations is greater than 120bp
 
 ## Installation
 

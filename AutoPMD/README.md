@@ -1,17 +1,20 @@
   
 # AutoPMD
 ## Project Introduction  
-
 **AutoPMD** is automated point mutation primer design tool for high-throughput protein modification.
 ![AutoPMD](https://github.com/editSeqDesign/AutoPMD/blob/main/AutoPMD/img/home.png)
 
-The main application scenarios of this software tool include:
-  1. Single point mutation primer design
-  2. Double point mutation primer design
-    - The distance between amino acid sites of two mutations is less than or equal to 15bp
-    - The distance between amino acid sites of two mutations is greater than 15bp but less than or equal to 120bp
-    - The distance between amino acid sites of two mutations is greater than 120bp
-
+## The main application scenarios of this software tool include:
+### 1. Single point mutation primer design
+- **Function Description**：Support the design of primers for implementing single amino acid point mutations.
+### 2. Double point mutation primer design
+- **Function Description**：Support the design of primers for implementing mutations at two amino acid sites.
+#### 2.1
+- The distance between amino acid sites of two mutations is less than or equal to 15bp
+#### 2.2
+- The distance between amino acid sites of two mutations is greater than 15bp but less than or equal to 120bp
+#### 2.3
+- The distance between amino acid sites of two mutations is greater than 120bp
 ## Installation
 
 ### python packages

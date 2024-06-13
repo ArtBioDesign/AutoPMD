@@ -2,40 +2,23 @@
 # AutoPMD
 ## Project Introduction  
 
-**AutoPMD** 
-Automated point mutation primer design tool for high-throughput protein modification
+**AutoPMD** is automated point mutation primer design tool for high-throughput protein modification.
 ![AutoPMD](https://github.com/editSeqDesign/AutoPMD/blob/main/AutoPMD/img/home.png)
 
-
-1. The user provides the upstream sequence of the target to be edited on the genome.  
-2. The user provides the coordinates of the target to be edited on the genome.
-
-Additionally, in alignment with the key functions provided by AutoESDCas for users, which include:
-
-1. Designing only sgRNA.
-2. Designing only primers.  
-3. Designing both sgRNA and primers.
-
-Both types of input information require the corresponding configurations.  
+The main application scenarios of this software tool include:
+  1. Single point mutation primer design
+  2. Double point mutation primer design
+    - The distance between amino acid sites of two mutations is less than or equal to 15bp
+    - The distance between amino acid sites of two mutations is greater than 15bp but less than or equal to 120bp
+    - The distance between amino acid sites of two mutations is greater than 120bp
 
 ## Installation
 
-
 ### python packages
-We suggest using Python 3.8 for data_preprocessing.
+We suggest using Python 3.8 for AutoPMD.
 
 ```shell
 pip install -r requirements.txt
-
-```
-
-### blast+
-```shell
-wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.13.0+-x64-linux.tar.gz -O ~/ncbi-blast-2.13.0+-x64-linux.tar.gz
-
-tar -zxvf ncbi-blast-2.13.0+-x64-linux.tar.gz
-
-export PATH=~/ncbi-blast-2.13.0+/bin:$PATH
 
 ```
 
@@ -46,47 +29,57 @@ export PATH=~/ncbi-blast-2.13.0+/bin:$PATH
 
 **Input:**
 
-- **Step 1:** Upload the genome (fna) file and the target information (CSV) file to be edited.
+- **Step 1:** Upload the plasmid template(gb) file and the target information(CSV) file to be edited.
 
-- **Step 2:** Select from different task types and provide the necessary configuration information.
-
-   1. Designing only sgRNA:
-      - Example configuration (data1):
-        ```json
-        {
-            "input_file_path": "./input/designing_only_sgRNA_1.csv",
-            "ref_genome": "./input/GCA_000011325.1_ASM1132v1_genomic.fna",
-            "data_preprocessing_workdir": "/home/XXX/tmp/data_preprocessing/output/",
-            "scene": "only_sgRNA"
-        }
-        ```
-
-   2. Designing only primers:
-      - Example configuration (data2):
-        ```json
-        {
-            "input_file_path": "./input/designing_only_primers_1.csv",
-            "ref_genome": "./input/GCA_000011325.1_ASM1132v1_genomic.fna",
-            "data_preprocessing_workdir": "/home/XXX/tmp/data_preprocessing/output/",
-            "scene": "only_primer"
-        }
-        ```
-
-   3. Designing both sgRNA and primers:
-      - Example configuration (data3):
-        ```json
-        {
-            "input_file_path": "./input/designing_both_sgRNA_and_primers_1.csv",
-            "ref_genome": "./input/GCA_000011325.1_ASM1132v1_genomic.fna",
-            "data_preprocessing_workdir": "/home/XXX/tmp/data_preprocessing/output/",
-            "scene": "both_sgRNA_primer"
-        }
-        ```
+- **Step 2:** provide the necessary configuration information.
+    - Example configuration (params.json):
+      ```json
+    {
+      "pcr_single_primer_params":{
+          "PRIMER_OPT_SIZE": 29,
+          "PRIMER_MIN_SIZE": 27,
+          "PRIMER_MAX_SIZE": 36,
+          "PRIMER_OPT_TM": 65.0,
+          "PRIMER_MIN_TM": 60.0,
+          "PRIMER_MAX_TM": 75.0,
+          "PRIMER_MIN_GC": 20.0,
+          "PRIMER_MAX_GC": 80.0
+          },
+      "pcr_double_primer_params":{
+          "PRIMER_OPT_SIZE": 29,  
+          "PRIMER_MIN_SIZE": 27,
+          "PRIMER_MAX_SIZE": 36,
+          "PRIMER_OPT_TM": 65.0,
+          "PRIMER_MIN_TM": 60.0,
+          "PRIMER_MAX_TM": 75.0,
+          "PRIMER_MIN_GC": 20.0,
+          "PRIMER_MAX_GC": 80.0
+      },
+      "seq_primer_params":{
+          "PRIMER_OPT_SIZE": 20,
+          "PRIMER_MIN_SIZE": 18,
+          "PRIMER_MAX_SIZE": 25,
+          "PRIMER_OPT_TM": 65.0,
+          "PRIMER_MIN_TM": 55.0,
+          "PRIMER_MAX_TM": 75.0,
+          "PRIMER_MIN_GC": 20,
+          "PRIMER_MAX_GC": 80  
+        },
+      "global_params":{
+          "AMPLICONIC_MARKER_SEQ_START_LENGTH": [200,100],
+          "AMPLICONIC_GENE_TARGET_SEQ_LENGTH": 40    
+      },   
+      "input_mute_name":"副本订单详情模板-新.xlsx",   
+      "inputdir":"/input_mut/",
+      "outputdir":"/output/",
+      "targetGene_after_before_seq_n":80
+    }    
+      ```
 
 **Execute:**
 
 ```shell
-python parse_input_to_df.py
+python .py
 ```
 **Output:**
 
@@ -94,67 +87,4 @@ python parse_input_to_df.py
 - `xxx.fna` 
 
 These files will be generated in the `/home/XXX/tmp/data_preprocessing/output/` directory.
-
-
-### 2.the user provides the coordinates of the target to be edited on the genome.
-
-
-**Input:**
-
-- **Step 1:** Upload the genome (gb) file and the target information (CSV) file to be edited.
-
-- **Step 2:** Select from different task types and provide the necessary configuration information.
-
-   1. Designing only sgRNA:
-      - Example configuration (data1):
-        ```json
-        {
-            "input_file_path": "./input/designing_only_sgRNA_2.csv",
-            "ref_genome": "./input/eco.fna",
-            "data_preprocessing_workdir": "/home/XXX/tmp/data_preprocessing/output/",
-            "scene": "only_sgRNA"
-        }
-        ```
-
-   2. Designing only primers:
-      - Example configuration (data2):
-        ```json
-        {
-            "input_file_path": "./input/designing_only_primers_2.csv",
-            "ref_genome": "./input/eco.fna",
-            "data_preprocessing_workdir": "/home/XXX/tmp/data_preprocessing/output/",
-            "scene": "only_primer"
-        }
-        ```
-
-   3. Designing both sgRNA and primers:
-      - Example configuration (data3):
-        ```json
-        {
-            "input_file_path": "./input/designing_both_sgRNA_and_primers_2.csv",
-            "ref_genome": "./input/eco.fna",
-            "data_preprocessing_workdir": "/home/XXX/tmp/data_preprocessing/output/",
-            "scene": "both_sgRNA_primer"
-        }
-        ```
-
-**Execute:**
-
-```shell
-python parse_input_to_df.py
-```
-**Output:**
-
-- `info_input.csv` 
-- `xxx.fna` 
-
-These files will be generated in the `/home/XXX/tmp/data_preprocessing/output/` directory.
-
-
-
-
-
-
-
-
 

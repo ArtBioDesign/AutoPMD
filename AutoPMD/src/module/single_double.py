@@ -396,7 +396,6 @@ def double_mute_class(double,before_processed_seq_dict):
     double3 = double[double['distance']>120]
     return double1, double2, double3
 
-
 #流程
 def design_process(input_mute_tuple_df,dict_plasmid_seq,before_processed_seq_dict):  
     #判断设计类型

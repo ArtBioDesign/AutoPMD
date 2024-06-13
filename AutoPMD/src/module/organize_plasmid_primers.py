@@ -101,12 +101,8 @@ def read_primer_by_site_from_dir(
                                         config.OUTPUT_DOUBLE_DOWN_NAME,
                                         config.OUTPUT_DOUBLE_UP_NAME
                                        ]):  
-       
-
-#
     files= os.listdir(dir_path) #得到文件夹下的所有文件名称
-    #挑选文件  
-#     input_from_primer_output=[ i for i in files if 'single'in i or 'double' in i and 'failtrue' not in i]
+    #挑选文件       input_from_primer_output=[ i for i in files if 'single'in i or 'double' in i and 'failtrue' not in i]
     up_primer_df = pd.DataFrame()
     down_primer_df = pd.DataFrame()
     primer_df = pd.DataFrame()

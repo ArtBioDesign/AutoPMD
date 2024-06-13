@@ -350,7 +350,7 @@ def everyone_plasmid_process(num, input_file_path=config.INPUT_FILE_PATH + confi
     gather_primer(many_pcr_primer_result, many_sequencing_primer_result, num, outputdir = config.OUTPUT_FILE_PATH)  
     return many_sequencing_primer_result, many_plasmid_mute_result, many_pcr_primer_result ,failture_position_df
 
-  
+
 def main(input_file_path):
     with open(input_file_path,'r',encoding='utf8') as fp:
         json_params = json.load(fp)
@@ -389,7 +389,6 @@ def main(input_file_path):
             failture_position_df.rename(columns={'sample':'Sample','template':"Template",'mutagenesis':'Mutagenesis'},inplace=True)
            
         util.read_failtrue_df_and_merge(sum_info_file = config.SUMMARY_PTIMER, failtrue_file = config.PCR_PRIMER_FAILTRUE, outputdir = config.OUTPUT_FILE_PATH, failture_position_df = failture_position_df)  
-
 
 if  __name__ == "__main__":
     parser = argparse.ArgumentParser()

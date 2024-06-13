@@ -1,4 +1,3 @@
-import primer3
 import pandas as pd
 import sys,os
 sys.path.append('../')

@@ -37,7 +37,7 @@
         "AMPLICONIC_GENE_TARGET_SEQ_LENGTH": 40    
     },   
 
-    "input_mute_name":"副本订单详情模板-新.xlsx",   
+    "input_mute_name":"自动化构建的样品引物设计.xlsx",
     "inputdir":"/input_mut/",
     "outputdir":"/output/",
     "targetGene_after_before_seq_n":80

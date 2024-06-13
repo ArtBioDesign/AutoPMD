@@ -4,7 +4,7 @@
 
 **AutoPMD** 
 Automated point mutation primer design tool for high-throughput protein modification
-![AutoPMD](https://github.com/tibbdc/AutoESDCas/assets/48673214/0d9ebb44-cefc-4b90-9bc9-3c09660a4bd9)
+![AutoPMD](https://github.com/editSeqDesign/AutoPMD/blob/main/AutoPMD/img/home page.png)
 
 
 1. The user provides the upstream sequence of the target to be edited on the genome.

@@ -1,0 +1,7 @@
+python==3.8.8
+bio==1.4.0
+biopython==1.76
+primer3-py==0.6.1
+pandas==1.2.4
+argparse==1.1
+primer3==0.6.1

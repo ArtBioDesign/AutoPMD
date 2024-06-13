@@ -1,0 +1,45 @@
+{
+    
+    "pcr_single_primer_params":{
+        "PRIMER_OPT_SIZE": 29,
+        "PRIMER_MIN_SIZE": 27,
+        "PRIMER_MAX_SIZE": 36,
+        "PRIMER_OPT_TM": 65.0,
+        "PRIMER_MIN_TM": 60.0,
+        "PRIMER_MAX_TM": 75.0,
+        "PRIMER_MIN_GC": 20.0,
+        "PRIMER_MAX_GC": 80.0
+        },
+    "pcr_double_primer_params":{
+        "PRIMER_OPT_SIZE": 29,  
+        "PRIMER_MIN_SIZE": 27,
+        "PRIMER_MAX_SIZE": 36,
+        "PRIMER_OPT_TM": 65.0,
+        "PRIMER_MIN_TM": 60.0,
+        "PRIMER_MAX_TM": 75.0,
+        "PRIMER_MIN_GC": 20.0,
+        "PRIMER_MAX_GC": 80.0
+    },
+    "seq_primer_params":{
+        
+        "PRIMER_OPT_SIZE": 20,
+        "PRIMER_MIN_SIZE": 18,
+        "PRIMER_MAX_SIZE": 25,
+        "PRIMER_OPT_TM": 65.0,
+        "PRIMER_MIN_TM": 55.0,
+        "PRIMER_MAX_TM": 75.0,
+        "PRIMER_MIN_GC": 20,
+        "PRIMER_MAX_GC": 80  
+        
+            },
+    "global_params":{
+        "AMPLICONIC_MARKER_SEQ_START_LENGTH": [200,100],
+        "AMPLICONIC_GENE_TARGET_SEQ_LENGTH": 40    
+    },   
+
+    "input_mute_name":"副本订单详情模板-新.xlsx",   
+    "inputdir":"/input_mut/",
+    "outputdir":"/output/",
+    "targetGene_after_before_seq_n":80
+}              
+  

@@ -9,12 +9,9 @@
 - **Function Description**：Support the design of primers for implementing single amino acid point mutations.
 ### 2. Double point mutation primer design
 - **Function Description**：Support the design of primers for implementing mutations at two amino acid sites.
-#### 2.1
-- The distance between amino acid sites of two mutations is less than or equal to 15bp
-#### 2.2
-- The distance between amino acid sites of two mutations is greater than 15bp but less than or equal to 120bp
-#### 2.3
-- The distance between amino acid sites of two mutations is greater than 120bp
+#### 2.1 - The distance between amino acid sites of two mutations is less than or equal to 15bp
+#### 2.2 - The distance between amino acid sites of two mutations is greater than 15bp but less than or equal to 120bp
+#### 2.3 - The distance between amino acid sites of two mutations is greater than 120bp
 ## Installation
 
 ### python packages

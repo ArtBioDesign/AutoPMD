@@ -6,20 +6,15 @@
 
 ## The main application scenarios of this software tool include:
 ### 1. Single point mutation primer design
-- **Function Description**：Support the design of primers for implementing single amino acid point mutations.
+- **Description**：Support the design of primers for implementing single amino acid point mutations.
 ### 2. Double point mutation primer design
-- **Function Description**：Support the design of primers for implementing mutations at two amino acid sites.
+- **Description**：Support the design of primers for implementing mutations at two amino acid sites.
     - The distance between amino acid sites of two mutations is less than or equal to 15bp
     - The distance between amino acid sites of two mutations is greater than 15bp but less than or equal to 120bp
     - The distance between amino acid sites of two mutations is greater than 120bp
+
+  
 ## Installation
-
-- 列表项1
-    - 子列表项1
-        - 子子列表项1
-
-
-
 ### python packages
 We suggest using Python 3.8 for AutoPMD.
 
@@ -31,16 +26,12 @@ pip install -r requirements.txt
 
 ## Usage & Example
 
-### 1. User Provides Upstream Sequence of the Target for Genome Editing
-
 **Input:**
-
 - **Step 1:** Upload the plasmid template(gb) file and the target information(CSV) file to be edited.
-
 - **Step 2:** provide the necessary configuration information.
     - Example configuration (params.json):
       ```json
-    {
+      {
       "pcr_single_primer_params":{
           "PRIMER_OPT_SIZE": 29,
           "PRIMER_MIN_SIZE": 27,
@@ -75,22 +66,21 @@ pip install -r requirements.txt
           "AMPLICONIC_MARKER_SEQ_START_LENGTH": [200,100],
           "AMPLICONIC_GENE_TARGET_SEQ_LENGTH": 40    
       },   
-      "input_mute_name":"副本订单详情模板-新.xlsx",   
+      "input_mute_name":"自动化构建的样品引物设计.xlsx",  
       "inputdir":"/input_mut/",
       "outputdir":"/output/",
       "targetGene_after_before_seq_n":80
-    }    
+      }
       ```
 
 **Execute:**
 
 ```shell
-python .py
+python main.py  -i params.json
 ```
 **Output:**
+- `sucess_site_mute.zip` 
+- `failture_site_mute.zip` 
 
-- `info_input.csv` 
-- `xxx.fna` 
-
-These files will be generated in the `/home/XXX/tmp/data_preprocessing/output/` directory.
+These files will be generated in the `XXX/AutoPMD/src/data/output` directory.
 

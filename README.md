@@ -71,7 +71,8 @@ pip install -r requirements.txt
       "outputdir":"/output/",
       "targetGene_after_before_seq_n":80
       }
-      ```
+      ```   
+      
 
 **Execute:**
 
